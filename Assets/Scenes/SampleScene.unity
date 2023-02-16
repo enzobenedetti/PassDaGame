@@ -223,6 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 120
+  isHidden: 0
   sprites:
   - {fileID: 21300000, guid: 33897b2c896f9214ba74b627fe9fa2d6, type: 3}
   - {fileID: 21300000, guid: 678a45024c310ce49a4c37acde36e8f6, type: 3}
@@ -408,6 +409,7 @@ GameObject:
   - component: {fileID: 519420033}
   - component: {fileID: 519420035}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420036}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -592,6 +594,22 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &519420036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5971d1428e14da6af0f4e6d076201b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 8b3092043dfe2534386e026441f5d589, type: 2}
+  playerMovement: {fileID: 196323983}
+  vignetteValue: 0.42
+  transitionSpeed: 0.6
 --- !u!1 &582160393
 GameObject:
   m_ObjectHideFlags: 0
