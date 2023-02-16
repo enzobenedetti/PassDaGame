@@ -52,7 +52,6 @@ public class PlayerMovement : MonoBehaviour
             _isBlue = !_isBlue;
             ChangeSprite();
         }
-        Debug.Log(_isHidden);
     }
 
     private void ChangeSprite()
