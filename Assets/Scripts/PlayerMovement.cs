@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
@@ -20,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     
     private SpriteRenderer _persoSprite;
     public List<Sprite> sprites;
+    public List<Image> uiColor;
 
     // Start is called before the first frame update
     void Start()
@@ -80,7 +82,87 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         
+        UpdateUI();
         isHidden = _persoSprite.sprite.name == _zoneColor.ToString();
+    }
+
+    void UpdateUI()
+    {
+        Color shadow = new Color(0.25f, 0.25f, 0.25f);
+        if (isRed)//Is red
+        {
+            uiColor[0].color = Color.white;
+            if (isGreen)
+            {
+                uiColor[1].color = Color.white;
+                uiColor[2].color = Color.white;
+                if (isBlue)
+                {
+                    uiColor[3].color = Color.white;
+                    uiColor[4].color = Color.white;
+                    uiColor[5].color = Color.white;
+                    uiColor[6].color = Color.white;
+                }
+                else
+                {
+                    uiColor[3].color = shadow;
+                    uiColor[4].color = shadow;
+                    uiColor[5].color = shadow;
+                    uiColor[6].color = shadow;
+                }
+            }
+            else
+            {
+                uiColor[1].color = shadow;
+                uiColor[2].color = shadow;
+                uiColor[5].color = shadow;
+                uiColor[6].color = shadow;
+                if (isBlue)
+                {
+                    uiColor[3].color = Color.white;
+                    uiColor[4].color = Color.white;
+                }
+                else
+                {
+                    uiColor[3].color = shadow;
+                    uiColor[4].color = shadow;
+                }
+            }
+        }
+        else//Is not red
+        {
+            uiColor[0].color = shadow;
+            uiColor[2].color = shadow;
+            uiColor[4].color = shadow;
+            uiColor[6].color = shadow;
+            if (isGreen)
+            {
+                uiColor[1].color = Color.white;
+                if (isBlue)
+                {
+                    uiColor[3].color = Color.white;
+                    uiColor[5].color = Color.white;
+                }
+                else
+                {
+                    uiColor[3].color = shadow;
+                    uiColor[5].color = shadow;
+                }
+            }
+            else
+            {
+                uiColor[1].color = shadow;
+                uiColor[5].color = shadow;
+                if (isBlue)
+                {
+                    uiColor[3].color = Color.white;
+                }
+                else
+                {
+                    uiColor[3].color = shadow;
+                }
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
