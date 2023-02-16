@@ -12,7 +12,11 @@ public class PlayerMovement : MonoBehaviour
     private bool _isRed;
     private bool _isGreen;
     private bool _isBlue;
+    private bool _isHidden;
 
+    private ZoneColor _zoneColor;
+    private int _zoneNumber;
+    
     private SpriteRenderer _persoSprite;
     public List<Sprite> sprites;
 
@@ -48,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
             _isBlue = !_isBlue;
             ChangeSprite();
         }
+        Debug.Log(_isHidden);
     }
 
     private void ChangeSprite()
@@ -74,10 +79,27 @@ public class PlayerMovement : MonoBehaviour
                 _persoSprite.sprite = _isBlue ? sprites[6] : sprites[7];
             }
         }
+        
+        _isHidden = _persoSprite.sprite.name == _zoneColor.ToString();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("lesgo");
+        if (other.CompareTag("ZoneColor"))
+        {
+            _zoneNumber++;
+            _zoneColor = other.GetComponent<SneakZone>().color;
+            _isHidden = _persoSprite.sprite.name == _zoneColor.ToString();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("ZoneColor"))
+        {
+            _zoneNumber--;
+            if (_zoneNumber <= 0) _zoneColor = ZoneColor.None;
+            _isHidden = _persoSprite.sprite.name == _zoneColor.ToString();
+        }
     }
 }
