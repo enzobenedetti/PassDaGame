@@ -91,6 +91,7 @@ public class PlayerMovement : MonoBehaviour
             _zoneColor = other.GetComponent<SneakZone>().color;
             isHidden = _persoSprite.sprite.name == _zoneColor.ToString();
         }
+        if (other.CompareTag("Spot")) Debug.Log("T'as perdu lol");
     }
 
     private void OnTriggerExit2D(Collider2D other)
