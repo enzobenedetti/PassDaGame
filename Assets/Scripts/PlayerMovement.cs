@@ -18,5 +18,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         _rigidbody.AddForce(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * speed);
+        
     }
 }
