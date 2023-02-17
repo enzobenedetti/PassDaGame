@@ -592,7 +592,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.09}
 --- !u!114 &519420033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -720,6 +720,7 @@ MonoBehaviour:
   cineMachine: {fileID: 912306681}
   basicLensSize: 5.09
   hiddenLensSize: 4
+  lensSpeed: 2.5
   playerMovement: {fileID: 196323983}
   vignetteValue: 0.42
   transitionSpeed: 0.6

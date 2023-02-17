@@ -52,6 +52,7 @@ public class CameraProfile : MonoBehaviour
             }
             else
             {
+                //perdu lol
                 
             }
         }

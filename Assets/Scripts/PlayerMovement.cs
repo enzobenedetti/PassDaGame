@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
 
     private ZoneColor _zoneColor;
     private int _zoneNumber;
+
+    [HideInInspector]public bool hasLost;
     
     private SpriteRenderer _persoSprite;
     public List<Sprite> sprites;
@@ -37,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (hasLost) return;
         _rigidbody.AddForce(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * speed);
 
         //Dealing with red Button
@@ -81,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 Debug.Log("perdu lol");
+                hasLost = true;
             }
         }
         else
