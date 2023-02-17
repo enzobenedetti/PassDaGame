@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isGreen;
     public bool isBlue;
     [HideInInspector]public bool isHidden;
+    private bool _underSpot;
 
     private ZoneColor _zoneColor;
     private int _zoneNumber;
@@ -55,6 +56,8 @@ public class PlayerMovement : MonoBehaviour
             isBlue = !isBlue;
             ChangeSprite();
         }
+        
+        if (_underSpot && !isHidden) Debug.Log("perdu lol");
     }
 
     private void ChangeSprite()
@@ -173,7 +176,8 @@ public class PlayerMovement : MonoBehaviour
             _zoneColor = other.GetComponent<SneakZone>().color;
             isHidden = _persoSprite.sprite.name == _zoneColor.ToString();
         }
-        if (other.CompareTag("Spot")) Debug.Log("T'as perdu lol");
+
+        if (other.CompareTag("Spot")) _underSpot = true;
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -184,5 +188,7 @@ public class PlayerMovement : MonoBehaviour
             if (_zoneNumber <= 0) _zoneColor = ZoneColor.None;
             isHidden = _persoSprite.sprite.name == _zoneColor.ToString();
         }
+        
+        if (other.CompareTag("Spot")) _underSpot = false;
     }
 }
