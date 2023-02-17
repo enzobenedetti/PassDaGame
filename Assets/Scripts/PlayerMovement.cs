@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
@@ -15,7 +16,8 @@ public class PlayerMovement : MonoBehaviour
     public bool isGreen;
     public bool isBlue;
     [HideInInspector]public bool isHidden;
-    private bool _underSpot;
+    [HideInInspector]public bool underSpot;
+    private AudioSource _heartBeat;
 
     private ZoneColor _zoneColor;
     private int _zoneNumber;
@@ -29,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _persoSprite = GetComponent<SpriteRenderer>();
+        _heartBeat = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -40,6 +43,9 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Red"))
         {
             isRed = !isRed;
+            uiColor[0].DOKill();
+            uiColor[0].transform.localScale = Vector3.one;
+            uiColor[0].transform.DOPunchScale(Vector3.one * 0.1f, 0.1f);
             ChangeSprite();
         }
 
@@ -47,6 +53,9 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Green"))
         {
             isGreen = !isGreen;
+            uiColor[1].DOKill();
+            uiColor[1].transform.localScale = Vector3.one;
+            uiColor[1].transform.DOPunchScale(Vector3.one * 0.1f, 0.1f);
             ChangeSprite();
         }
 
@@ -54,10 +63,30 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Blue"))
         {
             isBlue = !isBlue;
+            uiColor[3].DOKill();
+            uiColor[3].transform.localScale = Vector3.one;
+            uiColor[3].transform.DOPunchScale(Vector3.one * 0.1f, 0.1f);
             ChangeSprite();
         }
         
-        if (_underSpot && !isHidden) Debug.Log("perdu lol");
+        if (underSpot)
+        {
+            if (isHidden)
+            {
+                if (!_heartBeat.isPlaying)
+                {
+                    _heartBeat.Play();
+                }
+            }
+            else
+            {
+                Debug.Log("perdu lol");
+            }
+        }
+        else
+        {
+            if (_heartBeat.isPlaying) _heartBeat.Stop();
+        }
     }
 
     private void ChangeSprite()
@@ -177,7 +206,7 @@ public class PlayerMovement : MonoBehaviour
             isHidden = _persoSprite.sprite.name == _zoneColor.ToString();
         }
 
-        if (other.CompareTag("Spot")) _underSpot = true;
+        if (other.CompareTag("Spot")) underSpot = true;
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -189,6 +218,6 @@ public class PlayerMovement : MonoBehaviour
             isHidden = _persoSprite.sprite.name == _zoneColor.ToString();
         }
         
-        if (other.CompareTag("Spot")) _underSpot = false;
+        if (other.CompareTag("Spot")) underSpot = false;
     }
 }

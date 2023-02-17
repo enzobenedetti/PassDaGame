@@ -1,4 +1,5 @@
 ﻿using System;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using Random = UnityEngine.Random;
@@ -6,6 +7,11 @@ using Random = UnityEngine.Random;
 public class CameraProfile : MonoBehaviour
 {
     public PostProcessProfile profile;
+    public CinemachineVirtualCamera cineMachine;
+
+    public float basicLensSize = 5.09f;
+    public float hiddenLensSize = 4f;
+    public float lensSpeed = 2.5f;
 
     public PlayerMovement playerMovement;
     private Vignette _vignette;
@@ -36,6 +42,25 @@ public class CameraProfile : MonoBehaviour
             case false when _vignette.intensity.value > 0f:
                 _vignette.intensity.value -= Time.deltaTime * transitionSpeed;
                 break;
+        }
+
+        if (playerMovement.underSpot)
+        {
+            if (playerMovement.isHidden && cineMachine.m_Lens.OrthographicSize > hiddenLensSize)
+            {
+                cineMachine.m_Lens.OrthographicSize -= Time.deltaTime * lensSpeed;
+            }
+            else
+            {
+                
+            }
+        }
+        else
+        {
+            if (playerMovement.isHidden && cineMachine.m_Lens.OrthographicSize < basicLensSize)
+            {
+                cineMachine.m_Lens.OrthographicSize += Time.deltaTime * lensSpeed;
+            }
         }
     }
 }
