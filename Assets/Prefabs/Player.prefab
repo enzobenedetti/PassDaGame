@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2155451844056833179}
   - component: {fileID: 2155451844056833178}
   - component: {fileID: 2155451844056833177}
+  - component: {fileID: 6069214648490335444}
   m_Layer: 0
   m_Name: Eyes
   m_TagString: Untagged
@@ -105,6 +106,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &6069214648490335444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2155451844056833172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 444c39bb22a7e994d81b56383e2b3a3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2155451844268489743
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +134,7 @@ GameObject:
   - component: {fileID: 2155451844268489745}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -227,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac47d692964579b48a4a4233a37bc444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 120
+  speed: 30
   isRed: 0
   isGreen: 0
   isBlue: 0

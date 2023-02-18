@@ -16,6 +16,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenuManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NextLevel.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2Lu0zF727YE4oL1hLGiOKbRdtqO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -65,6 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676705930351</updated>
       <workItem from="1676705940533" duration="5779000" />
+      <workItem from="1676724960306" duration="3014000" />
     </task>
     <servers />
   </component>
