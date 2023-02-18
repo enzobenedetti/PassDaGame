@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -84,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 Debug.Log("perdu lol");
+                Invoke("ReloadActualScene",1);
                 hasLost = true;
             }
         }
@@ -223,5 +225,10 @@ public class PlayerMovement : MonoBehaviour
         }
         
         if (other.CompareTag("Spot")) underSpot = false;
+    }
+
+    private void ReloadActualScene()
+    {
+        Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
     }
 }

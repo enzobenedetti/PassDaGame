@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: -934133071
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: -788270770, guid: 460ffe8660812664ba2a51583baefff1, type: 3}
+  m_Sprite: {fileID: -1311431727, guid: 460ffe8660812664ba2a51583baefff1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -183,12 +183,12 @@ SpriteRenderer:
   m_SortingLayerID: -934133071
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1345287844, guid: 460ffe8660812664ba2a51583baefff1, type: 3}
+  m_Sprite: {fileID: -387210380, guid: 460ffe8660812664ba2a51583baefff1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -235,14 +235,14 @@ MonoBehaviour:
   underSpot: 0
   hasLost: 0
   sprites:
-  - {fileID: 1300751125, guid: 460ffe8660812664ba2a51583baefff1, type: 3}
-  - {fileID: 1665893473, guid: 460ffe8660812664ba2a51583baefff1, type: 3}
-  - {fileID: -1304532358, guid: 460ffe8660812664ba2a51583baefff1, type: 3}
-  - {fileID: 1725458994, guid: 460ffe8660812664ba2a51583baefff1, type: 3}
-  - {fileID: -2107448383, guid: 460ffe8660812664ba2a51583baefff1, type: 3}
-  - {fileID: 735184808, guid: 460ffe8660812664ba2a51583baefff1, type: 3}
-  - {fileID: 1705910823, guid: 460ffe8660812664ba2a51583baefff1, type: 3}
-  - {fileID: 1345287844, guid: 460ffe8660812664ba2a51583baefff1, type: 3}
+  - {fileID: -1249812387, guid: 460ffe8660812664ba2a51583baefff1, type: 3}
+  - {fileID: 417801011, guid: 460ffe8660812664ba2a51583baefff1, type: 3}
+  - {fileID: -2124736805, guid: 460ffe8660812664ba2a51583baefff1, type: 3}
+  - {fileID: -1233645647, guid: 460ffe8660812664ba2a51583baefff1, type: 3}
+  - {fileID: -530011962, guid: 460ffe8660812664ba2a51583baefff1, type: 3}
+  - {fileID: -623316623, guid: 460ffe8660812664ba2a51583baefff1, type: 3}
+  - {fileID: -1856256344, guid: 460ffe8660812664ba2a51583baefff1, type: 3}
+  - {fileID: -387210380, guid: 460ffe8660812664ba2a51583baefff1, type: 3}
   uiColor:
   - {fileID: 0}
   - {fileID: 0}

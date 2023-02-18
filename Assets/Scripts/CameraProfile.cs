@@ -43,7 +43,7 @@ public class CameraProfile : MonoBehaviour
                 _vignette.intensity.value -= Time.deltaTime * transitionSpeed;
                 break;
         }
-
+        
         if (playerMovement.underSpot)
         {
             if (playerMovement.isHidden && cineMachine.m_Lens.OrthographicSize > hiddenLensSize)
