@@ -13,7 +13,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Cam
   - 
   - 
   - 
@@ -42,4 +42,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: SneakZone
+    uniqueID: 3565016301
+    locked: 0
+  - name: Player
+    uniqueID: 3360834225
+    locked: 0
+  - name: Spot
+    uniqueID: 2867010205
     locked: 0
