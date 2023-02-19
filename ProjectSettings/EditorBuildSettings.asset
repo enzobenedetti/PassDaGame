@@ -6,17 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 722e8d279e3b8cc4eaf5e686ff385bb2
-  - enabled: 1
     path: Assets/Scenes/LevelSelector.unity
     guid: 140cd9b9db5da4549aebb07dc6e4dd36
   - enabled: 1
-    path: Assets/Scenes/ExempleScene.unity
+    path: Assets/Scenes/Level01.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Level01.unity
+    path: Assets/Scenes/Level02.unity
     guid: 1f9df0c0228ed7d4f8a9b81205427196
+  - enabled: 1
+    path: Assets/Scenes/Level03.unity
+    guid: afa93867c8a03bd4682804a5f199bd29
   - enabled: 1
     path: Assets/Plugins/2D Ultimate Plugin/ZeMemesMuseum.unity
     guid: fbf3fdd9dfb5cc34f8f85f313c5b66e5
