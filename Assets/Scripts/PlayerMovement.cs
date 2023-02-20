@@ -35,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _persoSprite = GetComponent<SpriteRenderer>();
         _heartBeat = GetComponent<AudioSource>();
+        
+        Debug.Log(PlayerPrefs.GetInt("LevelFinished"));
     }
 
     // Update is called once per frame

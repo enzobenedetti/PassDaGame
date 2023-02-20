@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EyesLift : MonoBehaviour
 {
-    //Aled
+    //Aled - Valou est une pute du coup je touche pas à ça
     public void Update()
     {
         //Left
