@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac47d692964579b48a4a4233a37bc444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  speed: 60
   isRed: 0
   isGreen: 0
   isBlue: 0

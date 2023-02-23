@@ -39,11 +39,14 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log(PlayerPrefs.GetInt("LevelFinished"));
     }
 
+
+    private Vector2 movement ;
     // Update is called once per frame
     void Update()
     {
         if (hasLost) return;
-        _rigidbody.AddForce(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * speed);
+        
+        movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * (speed * 2);
 
         //Dealing with red Button
         if (Input.GetButtonDown("Red"))
@@ -95,6 +98,11 @@ public class PlayerMovement : MonoBehaviour
         {
             if (_heartBeat.isPlaying) _heartBeat.Stop();
         }
+    }
+
+    private void FixedUpdate()
+    {
+        _rigidbody.AddForce(movement);
     }
 
     private void ChangeSprite()
