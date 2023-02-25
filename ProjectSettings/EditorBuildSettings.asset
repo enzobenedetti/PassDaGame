@@ -24,6 +24,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Level05.unity
     guid: dee957088204d25409f6f91fee75f652
   - enabled: 1
+    path: Assets/Scenes/Level06.unity
+    guid: 13e53a1adcc565a4e96af498bd5536a0
+  - enabled: 1
+    path: Assets/Scenes/Level07.unity
+    guid: cdbe62a16f2b4e644be22b5d6a910025
+  - enabled: 1
     path: Assets/Plugins/2D Ultimate Plugin/ZeMemesMuseum.unity
     guid: fbf3fdd9dfb5cc34f8f85f313c5b66e5
   m_configObjects: {}
